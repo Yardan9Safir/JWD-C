@@ -44,7 +44,7 @@
         <input class="container-input" type="text" name="sekolah_asal" id="sekolah_asal" placeholder="sekolah asal" />
       </div>
       <br>
-      <input type="submit" value="Daftar">
+      <input type="submit" value="submit">
       <!-- <input type="text" onclick="send()" name="" id=""> -->
       <!-- <script>
         function send() {

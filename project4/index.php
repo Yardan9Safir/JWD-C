@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html lang="en">
 
 <head>
@@ -21,13 +24,12 @@
     </div>
     <div>
       <?php
-      if (isset($_GET) == 'berhasil') {
-        $dataMasuk = 'Pendaftaran Siswa Baru Berhasil';
-        echo $dataMasuk;
-      } else if (isset($_GET) == 'gagal') {
-        $dataGagal = 'Pendaftaran Siswa Baru Gagal';
-        echo $dataGagal;
+      if (isset($_SESSION['status']) == 'berhasil') {
+        echo 'Pendaftaran Siswa Baru ' . $_SESSION['status'];
+      } else {
+        echo 'Pendaftaran Siswa Baru ' . $_SESSION['status'];
       }
+      session_destroy();
       ?>
     </div>
   </div>
