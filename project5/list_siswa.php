@@ -1,6 +1,6 @@
 <?php
-include_once "koneksi.php";
-$query = "SELECT * FROM siswa";
+include_once "helper/koneksi.php";
+$query = "SELECT * FROM tbl_pendaftaran";
 $result = mysqli_query($conn, $query);
 $jumlah_siswa = mysqli_num_rows($result);
 if ($result) {
@@ -24,10 +24,10 @@ if ($result) {
         <h3>Siswa Yang Sudah Mendaftar</h3>
       </div>
       <div>
-        <a href="form-daftar.php">[+] Tambah Baru</a>
+        <a href="form_daftar.php">[+] Tambah Baru</a>
       </div>
       <br>
-      <table border=3>
+      <table border=2px>
         <tr>
           <td><b>No</b></td>
           <td><b>Nama</b></td>
@@ -35,26 +35,31 @@ if ($result) {
           <td><b>Jenis Kelamin</b></td>
           <td><b>Agama</b></td>
           <td><b>Sekolah Asal</b></td>
+          <td><b>Tindakan</b></td>
         </tr>
         <?php foreach ($rows as $row): ?>
           <tr>
             <td>
-              <?= $row['no']; ?>
+              <?= htmlspecialchars($row['no_daftar']); ?>
             </td>
             <td>
               <?= $row['nama']; ?>
             </td>
             <td>
-              <?= $row['alamat']; ?>
+              <?= htmlspecialchars($row['alamat']); ?>
             </td>
             <td>
-              <?= $row["jenis_kelamin"]; ?>
+              <?= htmlspecialchars($row["jenis_kelamin"]); ?>
             </td>
             <td>
-              <?= $row['agama']; ?>
+              <?= htmlspecialchars($row['agama']); ?>
             </td>
             <td>
-              <?= $row['sekolah_asal']; ?>
+              <?= htmlspecialchars($row['sekolah_asal']); ?>
+            </td>
+            <td>
+              <a href="form_update.php">Ubah</a>
+              <a href="delete.php">Hapus</a>
             </td>
           </tr>
         <?php endforeach; ?>

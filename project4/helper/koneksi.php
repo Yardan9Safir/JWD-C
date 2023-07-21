@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$database = "db_jwdc";
+$database = "db_sekolah";
 $username = "root";
 $password = "";
 // Create connection
