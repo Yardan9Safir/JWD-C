@@ -26,18 +26,21 @@ session_start();
       <?php
       if (isset($_SESSION['status']) == 'berhasil') {
         echo 'Pendaftaran Siswa Baru ' . $_SESSION['status'];
-      } else if(isset($_SESSION['status']) == 'berhasil') {
+        session_destroy();
+      } else if (isset($_SESSION['status']) == 'berhasil') {
         echo 'Pendaftaran Siswa Baru ' . $_SESSION['status'];
-      }else if(isset($_SESSION['status']) == 'berhasil dihapus'){
+        session_destroy();
+      } else if (isset($_SESSION['status']) == 'berhasil dihapus') {
         echo 'Data Siswa ' . $_SESSION['status'];
-      }else if(isset($_SESSION['status']) == 'gagal dihapus'){
+        session_destroy();
+      } else if (isset($_SESSION['status']) == 'gagal dihapus') {
         echo 'Data Siswa ' . $_SESSION['status'];
+        session_destroy();
       }
-      session_destroy();
+
       ?>
     </div>
   </div>
 </body>
 
 </html>
-

@@ -20,8 +20,6 @@ if (isset($_POST['nama'])) {
   }
 }
 ?>
-
-
 <div style="border:2px solid #6c757d; padding:5px">
   <form action="form_daftar.php" method="post">
     <label for="nama">Nama </label>
